@@ -1,4 +1,5 @@
 BOXG
+BOXB
 dog
 person
 cat

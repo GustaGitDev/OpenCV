@@ -1,0 +1,27 @@
+Executar o reconhecimento com imagem em tempo real {
+
+    yolo detect predict model=runs/detect/train/weights/best.pt source=0 show=True
+    yolo detect predict model=dataset/runs/detect/train/weights/best.pt source=0 show=True
+
+}
+
+Executar o app de seleção de objeto {
+
+    pyrcc5 -o libs/resources.py resources.qrc
+    python labelImg.py
+
+}
+
+Executar o treinamento das imagens após realizar a seleção {
+
+    yolo detect train data=C:/Users/Robotica/OpenCV/dataset/data.yaml model=yolov8n.pt epochs=100 imgsz=640
+
+}
+Comando para ativar a VENV para realizar o treinamento da IA {
+
+    Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+    C:\Users\Robotica\yolo-gpu\Scripts\Activate.ps1    # ou: yolo-gpu\Scripts\activate
+    python -V   # deve mostrar 3.12.10
+
+}
+
