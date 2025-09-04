@@ -2,6 +2,9 @@ Executar o reconhecimento com imagem em tempo real {
 
     yolo detect predict model=runs/detect/train/weights/best.pt source=0 show=True
     yolo detect predict model=dataset/runs/detect/train/weights/best.pt source=0 show=True
+    yolo detect predict model=runs/detect/train4/weights/best.pt source=0 show=True
+    yolo detect predict model=runs/segment/train/weights/best.pt source=0 show=True
+    runs\segment\train5
 
 }
 
@@ -15,12 +18,20 @@ Executar o app de seleção de objeto {
 Executar o treinamento das imagens após realizar a seleção {
 
     yolo detect train data=C:/Users/Robotica/OpenCV/dataset/data.yaml model=yolov8n.pt epochs=100 imgsz=640
+    dataset/imagens/YOLODataset/dataset.yaml
+    yolo segment train data=C:/Users/Robotica/OpenCV/dataset/imagens/YOLODataset/dataset.yaml `
+    model=yolov8s-seg.pt device=0 imgsz=640 batch=16 epochs=100 workers=4 cache=True `
+    project=runs/segment name=train_gpu3050_seg
+
+    yolo segment train data=C:/Users/Robotica/OpenCV/dataset-yolo-seg/data.yaml model=yolov8s-seg.pt epochs=100 imgsz=640 device=0
+
+
 
 }
 Comando para ativar a VENV para realizar o treinamento da IA {
 
     Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-    C:\Users\Robotica\yolo-gpu\Scripts\Activate.ps1    # ou: yolo-gpu\Scripts\activate
+    C:/Users/Robotica/yolo-gpu/Scripts/Activate.ps1    # ou: yolo-gpu/Scripts/activate
     python -V   # deve mostrar 3.12.10
 
 }

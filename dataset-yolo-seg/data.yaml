@@ -1,0 +1,6 @@
+train: C:/Users/Robotica/OpenCV/dataset-yolo-seg/images/train
+val: C:/Users/Robotica/OpenCV/dataset-yolo-seg/images/val
+
+nc: 3  # número de classes
+names: ["BOXG", "BOXR", "PALLET"]
+# , "BOXB"

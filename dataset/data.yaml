@@ -2,4 +2,4 @@ train: C:/Users/Robotica/OpenCV/dataset/images/train
 val: C:/Users/Robotica/OpenCV/dataset/images/val
 
 nc: 4  # número de classes
-names: ['BOXG','BOXB','dog','person']
+names: ['BOXB','BOXG','person','dog']
